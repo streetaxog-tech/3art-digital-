@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photography — 3Arts Digital</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <style>
+    :root { --accent:#9b5de5; }
+    body{
+      margin:0; color:#fff;
+      font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(155,93,229,.18), transparent 60%),
+                  linear-gradient(135deg,#07040a 0%, #0b0720 45%, #0b1633 100%);
+    }
+    h1,h2,h3{font-family:'Playfair Display',serif}
+    #bgCanvas{position:absolute;inset:0;z-index:0}
+    header,section,footer{position:relative;z-index:10}
+    .glass-nav{background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.14));backdrop-filter:blur(6px)}
+    .nav-link:hover{color:var(--accent)}
+    .card img{transition:transform .6s cubic-bezier(.2,.9,.3,1)}
+    .card:hover img{transform:scale(1.06)}
+    .tag{border:1px solid rgba(255,255,255,.08);padding:.35rem .6rem;border-radius:.6rem}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/logo.png" alt="3Arts Digital" class="h-10 w-auto">
+        <span class="text-lg font-semibold">3Arts Digital</span>
+      </a>
+      <nav>
+        <ul class="flex items-center gap-8 text-sm">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="photography.html">Photography</a></li>
+          <li><a class="nav-link" href="videography.html">Videography</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="h-[60vh] md:h-[70vh] relative flex items-center justify-center text-center overflow-hidden">
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+    <div class="px-6" data-aos="fade-up">
+      <div class="mb-3 text-xs uppercase tracking-[.3em] text-white/70">Services</div>
+      <h1 class="text-4xl md:text-6xl font-bold">Photography</h1>
+      <p class="max-w-2xl mx-auto text-gray-300 mt-4">Wedding • Pre-Wedding • Engagement • Maternity • Product • Portfolio</p>
+      <div class="mt-6 flex items-center justify-center gap-3 text-white/80">
+        <span class="tag">Luxury Coverage</span>
+        <span class="tag">On-Location</span>
+        <span class="tag">Studio</span>
+        <span class="tag">Retouching</span>
+      </div>
+    </div>
+    <div class="absolute bottom-6 text-xs text-white/60">Scroll ↓</div>
+  </section>
+
+  <!-- CATEGORY CARDS -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8" data-aos="fade-right">Explore Categories</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Wedding -->
+        <a href="wedding-photography.html" class="card block rounded-xl overflow-hidden bg-gray-900 hover:bg-gray-800 transition" data-aos="zoom-in">
+          <div class="relative h-56">
+            <img src="images/wedding-thumb.jpg" alt="Wedding Photography" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Wedding Photography</h3>
+            <p class="text-gray-300 mt-1">Full-day rituals, candid moments & editorial portraits.</p>
+          </div>
+        </a>
+
+        <!-- Pre-Wedding -->
+        <a href="prewedding-photography.html" class="card block rounded-xl overflow-hidden bg-gray-900 hover:bg-gray-800 transition" data-aos="zoom-in" data-aos-delay="60">
+          <div class="relative h-56">
+            <img src="images/prewedding-thumb.jpg" alt="Pre-Wedding" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Pre-Wedding Photography</h3>
+            <p class="text-gray-300 mt-1">Concept shoots, locations & cinematic lighting.</p>
+          </div>
+        </a>
+
+        <!-- Engagement -->
+        <a href="engagement-photography.html" class="card block rounded-xl overflow-hidden bg-gray-900 hover:bg-gray-800 transition" data-aos="zoom-in" data-aos-delay="120">
+          <div class="relative h-56">
+            <img src="images/engagement-thumb.jpg" alt="Engagement" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Engagement Photography</h3>
+            <p class="text-gray-300 mt-1">Candid celebrations with elegant framing.</p>
+          </div>
+        </a>
+
+        <!-- Maternity -->
+        <a href="maternity-shoot.html" class="card block rounded-xl overflow-hidden bg-gray-900 hover:bg-gray-800 transition" data-aos="zoom-in">
+          <div class="relative h-56">
+            <img src="images/maternity-thumb.jpg" alt="Maternity" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Maternity Shoot</h3>
+            <p class="text-gray-300 mt-1">Soft & graceful motherhood portraits.</p>
+          </div>
+        </a>
+
+        <!-- Product -->
+        <a href="product-photography.html" class="card block rounded-xl overflow-hidden bg-gray-900 hover:bg-gray-800 transition" data-aos="zoom-in" data-aos-delay="60">
+          <div class="relative h-56">
+            <img src="images/product-thumb.jpg" alt="Product" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Product Photography</h3>
+            <p class="text-gray-300 mt-1">E-commerce, lifestyle & brand visuals.</p>
+          </div>
+        </a>
+
+        <!-- Portfolio -->
+        <a href="portfolio.html" class="card block rounded-xl overflow-hidden bg-gray-900 hover:bg-gray-800 transition" data-aos="zoom-in" data-aos-delay="120">
+          <div class="relative h-56">
+            <img src="images/portfolio-thumb.jpg" alt="Portfolio" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Portfolio</h3>
+            <p class="text-gray-300 mt-1">Fashion • Portrait • Editorial highlights.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="py-16 bg-black/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-right">Featured Gallery</h2>
+        <a href="portfolio.html" class="text-sm text-purple-300 hover:text-purple-200" data-aos="fade-left">View full portfolio →</a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" data-aos="fade-up">
+        <!-- Replace with real images -->
+        <img src="images/g1.jpg" class="rounded-lg object-cover w-full h-40" alt="">
+        <img src="images/g2.jpg" class="rounded-lg object-cover w-full h-40" alt="">
+        <img src="images/g3.jpg" class="rounded-lg object-cover w-full h-40" alt="">
+        <img src="images/g4.jpg" class="rounded-lg object-cover w-full h-40" alt="">
+        <img src="images/g5.jpg" class="rounded-lg object-cover w-full h-40" alt="">
+        <img src="images/g6.jpg" class="rounded-lg object-cover w-full h-40" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES / CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+      <div data-aos="fade-right">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Book Your Shoot</h2>
+        <p class="text-gray-300">Customisable packages for weddings, pre-weddings, maternity & brand shoots. Travel worldwide.</p>
+        <ul class="mt-4 space-y-2 text-gray-300">
+          <li>• Multiple photographers / cinematographers</li>
+          <li>• Same-day teasers (optional)</li>
+          <li>• Advanced retouching & color grade</li>
+        </ul>
+        <a href="contact.html" class="inline-block mt-6 bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-3 rounded-full font-semibold shadow-lg">Enquire Now</a>
+      </div>
+      <div class="bg-gray-900/60 rounded-xl p-6" data-aos="fade-left">
+        <h3 class="text-xl font-semibold mb-4">Popular Packages</h3>
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-semibold">Classic Wedding</div>
+              <div class="text-sm text-gray-400">8 hrs • 2 Photographers • 300+ edits</div>
+            </div>
+            <a href="wedding-photography.html" class="text-purple-300 text-sm">Details →</a>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-semibold">Pre-Wedding Signature</div>
+              <div class="text-sm text-gray-400">2 locations • styling • cinematic reel</div>
+            </div>
+            <a href="prewedding-photography.html" class="text-purple-300 text-sm">Details →</a>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="font-semibold">Brand / Product</div>
+              <div class="text-sm text-gray-400">E-com + lifestyle • set design</div>
+            </div>
+            <a href="product-photography.html" class="text-purple-300 text-sm">Details →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 bg-black/60">
+    <div class="max-w-7xl mx-auto px-6 text-gray-400 text-center">
+      <div class="mb-3"><a class="text-purple-300" href="contact.html">Contact</a> • <a class="text-purple-300" href="about.html">About</a></div>
+      <div>&copy; <span id="year"></span> 3Arts Digital • All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 900, once: true }); document.getElementById('year').textContent=new Date().getFullYear(); </script>
+
+  <!-- Three.js background (same vibe as index) -->
+  <script>
+    const canvas = document.getElementById('bgCanvas');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x06040a, 0.012);
+    const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 1000);
+    camera.position.z = 28;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+
+    const amb = new THREE.AmbientLight(0xffffff, .25); scene.add(amb);
+    const p = new THREE.PointLight(0xffffff, .6); p.position.set(40,40,40); scene.add(p);
+    const rim = new THREE.PointLight(0x9b5de5, 1.1); rim.position.set(-30,20,20); scene.add(rim);
+
+    const objs=[]; const box=new THREE.BoxGeometry(1.6,1.6,1.6); const plane=new THREE.PlaneGeometry(3,2);
+    for(let i=0;i<32;i++){
+      const mat=new THREE.MeshPhysicalMaterial({ color:0x9b5de5, metalness:.2, roughness:.35, transparent:true, opacity:.85, emissive:0x6f2bd8, emissiveIntensity:.6 });
+      const mesh=(Math.random()>0.5)?new THREE.Mesh(box,mat):new THREE.Mesh(plane,mat);
+      mesh.position.set((Math.random()-.5)*56,(Math.random()-.5)*26,(Math.random()-.5)*56);
+      mesh.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,Math.random()*Math.PI);
+      mesh.scale.setScalar(1+Math.random()*1.4);
+      scene.add(mesh); objs.push(mesh);
+    }
+
+    let mx=0,my=0; addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*2; my=(e.clientY/innerHeight-.5)*2;});
+    const clock=new THREE.Clock();
+    function loop(){
+      const t=clock.getElapsedTime();
+      objs.forEach((o,i)=>{ o.rotation.x+=0.002+(i%3)*0.0004; o.rotation.y+=0.003+(i%2)*0.0005; o.position.y+=Math.sin(t*.2+i)*0.0015; });
+      camera.position.x+=(mx*5 - camera.position.x)*0.05;
+      camera.position.y+=(-my*3 - camera.position.y)*0.05;
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera); requestAnimationFrame(loop);
+    } loop();
+
+    addEventListener('resize',()=>{ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
+  </script>
+</body>
+</html>
