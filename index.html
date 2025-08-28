@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3Arts Digital</title>
+<title>3Arts Digital - Demo</title>
+
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.png">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -11,13 +14,13 @@
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- AOS Animation Library -->
+<!-- AOS for animations -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
-  body { font-family: 'Montserrat', sans-serif; }
-  h1,h2,h3 { font-family: 'Playfair Display', serif; }
-  .portfolio-item:hover img { transform: scale(1.05); transition: transform 0.5s; }
+body { font-family: 'Montserrat', sans-serif; }
+h1,h2,h3 { font-family: 'Playfair Display', serif; }
+.portfolio-item:hover img { transform: scale(1.05); transition: transform 0.5s; }
 </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -25,37 +28,58 @@
 <!-- Navbar -->
 <nav class="fixed w-full z-50 bg-white shadow-md">
   <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-    <div class="text-2xl font-bold">3Arts Digital</div>
+    <div class="flex items-center space-x-2">
+      <img src="images/logo.png" alt="3Arts Digital Logo" class="h-10 w-auto">
+      <span class="text-2xl font-bold">3Arts Digital</span>
+    </div>
     <ul class="flex space-x-6">
       <li><a href="#home" class="hover:text-indigo-600 transition">Home</a></li>
       <li><a href="#portfolio" class="hover:text-indigo-600 transition">Portfolio</a></li>
       <li><a href="#services" class="hover:text-indigo-600 transition">Services</a></li>
       <li><a href="#about" class="hover:text-indigo-600 transition">About</a></li>
+      <li><a href="#blog" class="hover:text-indigo-600 transition">Blog</a></li>
       <li><a href="#contact" class="hover:text-indigo-600 transition">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section id="home" class="h-screen bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');">
+<section id="home" class="h-screen bg-cover bg-center relative" style="background-image: url('images/hero.jpg');">
   <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
     <h1 class="text-5xl font-bold mb-4" data-aos="fade-up">Capturing Moments, Crafting Memories</h1>
     <p class="mb-6 text-lg" data-aos="fade-up" data-aos-delay="200">Professional Photography & Cinematic Visuals</p>
-    <a href="#portfolio" class="bg-indigo-600 px-6 py-3 rounded-full text-white hover:bg-indigo-500 transition" data-aos="fade-up" data-aos-delay="400">View Portfolio</a>
+    <a href="#portfolio" class="bg-indigo-600 px-6 py-3 rounded-full text-white hover:bg-indigo-500 transition" data-aos="fade-up" data-aos-delay="400">Explore Portfolio</a>
   </div>
 </section>
 
 <!-- Portfolio Section -->
 <section id="portfolio" class="py-20 max-w-7xl mx-auto px-4">
-  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Portfolio</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Portfolio Items: Replace image URLs with your own demos -->
-    <div class="portfolio-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Demo 1" class="w-full h-64 object-cover rounded-lg shadow-lg"></div>
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=800&q=80" alt="Demo 2" class="w-full h-64 object-cover rounded-lg shadow-lg"></div>
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=800&q=80" alt="Demo 3" class="w-full h-64 object-cover rounded-lg shadow-lg"></div>
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80" alt="Demo 4" class="w-full h-64 object-cover rounded-lg shadow-lg"></div>
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="400"><img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80" alt="Demo 5" class="w-full h-64 object-cover rounded-lg shadow-lg"></div>
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="500"><img src="https://images.unsplash.com/photo-1519183071298-a2962eadc2e0?auto=format&fit=crop&w=800&q=80" alt="Demo 6" class="w-full h-64 object-cover rounded-lg shadow-lg"></div>
+  <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Portfolio Categories</h2>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in">
+      <img src="images/wedding-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-2xl font-bold">Wedding</h3>
+      </div>
+    </div>
+    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+      <img src="images/prewedding-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-2xl font-bold">Pre-Wedding</h3>
+      </div>
+    </div>
+    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+      <img src="images/babyshower-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-2xl font-bold">Baby Shower</h3>
+      </div>
+    </div>
+    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+      <img src="images/videography-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-white text-2xl font-bold">Videography</h3>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -64,9 +88,18 @@
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-6 bg-white rounded-lg shadow-lg text-center" data-aos="fade-up"><h3 class="text-2xl font-bold mb-4">Wedding Photography</h3><p>Capture every special moment with cinematic style and emotion.</p></div>
-      <div class="p-6 bg-white rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100"><h3 class="text-2xl font-bold mb-4">Portraits</h3><p>Professional portraits with creative lighting and composition.</p></div>
-      <div class="p-6 bg-white rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200"><h3 class="text-2xl font-bold mb-4">Commercial / Product</h3><p>High-quality visuals for brands, products, and campaigns.</p></div>
+      <div class="p-6 bg-white rounded-lg shadow-lg text-center" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-4">Wedding Photography</h3>
+        <p>Capture every special moment with cinematic style and emotion.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-bold mb-4">Pre-Wedding Photography</h3>
+        <p>Creative portraits with cinematic lighting and settings.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold mb-4">Videography</h3>
+        <p>Cinematic films of weddings, pre-weddings, and events.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -75,12 +108,33 @@
 <section id="about" class="py-20 max-w-7xl mx-auto px-4">
   <div class="grid md:grid-cols-2 gap-12 items-center">
     <div data-aos="fade-right">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Photographer" class="w-full h-auto rounded-lg shadow-lg">
+      <img src="images/about.jpg" alt="Photographer" class="w-full h-auto rounded-lg shadow-lg">
     </div>
     <div data-aos="fade-left">
       <h2 class="text-4xl font-bold mb-6">About 3Arts Digital</h2>
-      <p class="mb-4">3Arts Digital is a professional photography studio specializing in capturing unforgettable moments with cinematic storytelling and artistic precision.</p>
-      <p>We combine creativity, technical skill, and passion to craft images that tell your unique story. From weddings to commercial shoots, our goal is to make every frame timeless.</p>
+      <p class="mb-4">3Arts Digital is a premium photography studio creating cinematic storytelling through photography and videography.</p>
+      <p>Our team combines creativity, technical skill, and passion to craft timeless memories for every client.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Behind The Scenes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-gray-100 rounded-lg shadow-lg" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-4">Photography Tips</h3>
+        <p>Learn the best tips for stunning portraits and weddings.</p>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-bold mb-4">Gear Reviews</h3>
+        <p>Our recommended cameras and equipment for professional shoots.</p>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold mb-4">BTS Videos</h3>
+        <p>Watch behind-the-scenes clips of our cinematic shoots.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -89,28 +143,9 @@
 <section id="contact" class="py-20 bg-gray-50">
   <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
     <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
-    <p class="mb-8">Contact us to book a session or inquire about our services.</p>
+    <p class="mb-8">Book a session or inquire about our services.</p>
     <form class="grid grid-cols-1 gap-4">
       <input type="text" placeholder="Name" class="p-4 rounded-lg border border-gray-300 w-full">
       <input type="email" placeholder="Email" class="p-4 rounded-lg border border-gray-300 w-full">
       <textarea placeholder="Message" rows="5" class="p-4 rounded-lg border border-gray-300 w-full"></textarea>
       <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-500 transition">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-white shadow-inner py-6">
-  <div class="max-w-7xl mx-auto px-4 text-center text-gray-600">
-    &copy; 2025 3Arts Digital. All rights reserved.
-  </div>
-</footer>
-
-<!-- AOS Animation JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
-</script>
-
-</body>
-</html>
