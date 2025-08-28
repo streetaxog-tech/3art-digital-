@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3Arts Digital - Demo</title>
+<title>3Arts Digital - Home</title>
 
-<!-- Favicon -->
 <link rel="icon" href="images/favicon.png">
 
 <!-- Google Fonts -->
@@ -17,10 +16,14 @@
 <!-- AOS for animations -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<!-- Three.js for 3D effects -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+
 <style>
-body { font-family: 'Montserrat', sans-serif; }
+body { font-family: 'Montserrat', sans-serif; margin:0; padding:0;}
 h1,h2,h3 { font-family: 'Playfair Display', serif; }
 .portfolio-item:hover img { transform: scale(1.05); transition: transform 0.5s; }
+canvas { display: block; }
 </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -33,58 +36,67 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
       <span class="text-2xl font-bold">3Arts Digital</span>
     </div>
     <ul class="flex space-x-6">
-      <li><a href="#home" class="hover:text-indigo-600 transition">Home</a></li>
-      <li><a href="#portfolio" class="hover:text-indigo-600 transition">Portfolio</a></li>
-      <li><a href="#services" class="hover:text-indigo-600 transition">Services</a></li>
-      <li><a href="#about" class="hover:text-indigo-600 transition">About</a></li>
-      <li><a href="#blog" class="hover:text-indigo-600 transition">Blog</a></li>
-      <li><a href="#contact" class="hover:text-indigo-600 transition">Contact</a></li>
+      <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
+      <li><a href="wedding.html" class="hover:text-indigo-600 transition">Wedding</a></li>
+      <li><a href="prewedding.html" class="hover:text-indigo-600 transition">Pre-Wedding</a></li>
+      <li><a href="babyshower.html" class="hover:text-indigo-600 transition">Baby Shower</a></li>
+      <li><a href="videography.html" class="hover:text-indigo-600 transition">Videography</a></li>
+      <li><a href="services.html" class="hover:text-indigo-600 transition">Services</a></li>
+      <li><a href="about.html" class="hover:text-indigo-600 transition">About</a></li>
+      <li><a href="blog.html" class="hover:text-indigo-600 transition">Blog</a></li>
+      <li><a href="contact.html" class="hover:text-indigo-600 transition">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section id="home" class="h-screen bg-cover bg-center relative" style="background-image: url('images/hero.jpg');">
-  <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+<!-- Hero Section with 3D Canvas -->
+<section id="home" class="h-screen relative">
+  <canvas id="heroCanvas" class="absolute inset-0 z-0"></canvas>
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 z-10">
     <h1 class="text-5xl font-bold mb-4" data-aos="fade-up">Capturing Moments, Crafting Memories</h1>
     <p class="mb-6 text-lg" data-aos="fade-up" data-aos-delay="200">Professional Photography & Cinematic Visuals</p>
-    <a href="#portfolio" class="bg-indigo-600 px-6 py-3 rounded-full text-white hover:bg-indigo-500 transition" data-aos="fade-up" data-aos-delay="400">Explore Portfolio</a>
+    <a href="wedding.html" class="bg-indigo-600 px-6 py-3 rounded-full text-white hover:bg-indigo-500 transition" data-aos="fade-up" data-aos-delay="400">Explore Portfolio</a>
   </div>
 </section>
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="py-20 max-w-7xl mx-auto px-4">
+<!-- Portfolio Categories -->
+<section id="portfolio" class="py-20 max-w-7xl mx-auto px-4 relative z-10">
   <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Portfolio Categories</h2>
   <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in">
+
+    <a href="wedding.html" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in">
       <img src="images/wedding-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
       <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <h3 class="text-white text-2xl font-bold">Wedding</h3>
+        <h3 class="text-white text-2xl font-bold">Wedding Photography</h3>
       </div>
-    </div>
-    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+    </a>
+
+    <a href="prewedding.html" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
       <img src="images/prewedding-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
       <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <h3 class="text-white text-2xl font-bold">Pre-Wedding</h3>
+        <h3 class="text-white text-2xl font-bold">Pre-Wedding Photography</h3>
       </div>
-    </div>
-    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+    </a>
+
+    <a href="babyshower.html" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
       <img src="images/babyshower-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
       <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <h3 class="text-white text-2xl font-bold">Baby Shower</h3>
+        <h3 class="text-white text-2xl font-bold">Baby Shower / Maternity</h3>
       </div>
-    </div>
-    <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+    </a>
+
+    <a href="videography.html" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
       <img src="images/videography-thumb.jpg" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
       <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <h3 class="text-white text-2xl font-bold">Videography</h3>
+        <h3 class="text-white text-2xl font-bold">Videography / Cinematic Films</h3>
       </div>
-    </div>
+    </a>
+
   </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-20 bg-gray-50">
+<section id="services" class="py-20 bg-gray-50 relative z-10">
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -105,7 +117,7 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
 </section>
 
 <!-- About Section -->
-<section id="about" class="py-20 max-w-7xl mx-auto px-4">
+<section id="about" class="py-20 max-w-7xl mx-auto px-4 relative z-10">
   <div class="grid md:grid-cols-2 gap-12 items-center">
     <div data-aos="fade-right">
       <img src="images/about.jpg" alt="Photographer" class="w-full h-auto rounded-lg shadow-lg">
@@ -118,34 +130,51 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
   </div>
 </section>
 
-<!-- Blog Section -->
-<section id="blog" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Behind The Scenes</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-6 bg-gray-100 rounded-lg shadow-lg" data-aos="fade-up">
-        <h3 class="text-2xl font-bold mb-4">Photography Tips</h3>
-        <p>Learn the best tips for stunning portraits and weddings.</p>
-      </div>
-      <div class="p-6 bg-gray-100 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-2xl font-bold mb-4">Gear Reviews</h3>
-        <p>Our recommended cameras and equipment for professional shoots.</p>
-      </div>
-      <div class="p-6 bg-gray-100 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-2xl font-bold mb-4">BTS Videos</h3>
-        <p>Watch behind-the-scenes clips of our cinematic shoots.</p>
-      </div>
-    </div>
+<!-- Footer -->
+<footer class="bg-white shadow-inner py-6 mt-20 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 text-center text-gray-600">
+    &copy; 2025 3Arts Digital. All rights reserved.
   </div>
-</section>
+</footer>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-50">
-  <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
-    <p class="mb-8">Book a session or inquire about our services.</p>
-    <form class="grid grid-cols-1 gap-4">
-      <input type="text" placeholder="Name" class="p-4 rounded-lg border border-gray-300 w-full">
-      <input type="email" placeholder="Email" class="p-4 rounded-lg border border-gray-300 w-full">
-      <textarea placeholder="Message" rows="5" class="p-4 rounded-lg border border-gray-300 w-full"></textarea>
-      <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-500 transition">Send Message</button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+<!-- Three.js 3D Background Script -->
+<script>
+const canvas = document.getElementById('heroCanvas');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const material = new THREE.MeshStandardMaterial({ color: 0x6B46C1, wireframe: true });
+const torusKnot = new THREE.Mesh(geometry, material);
+scene.add(torusKnot);
+
+const light = new THREE.PointLight(0xffffff, 1);
+light.position.set(20,20,20);
+scene.add(light);
+
+camera.position.z = 50;
+
+function animate() {
+  requestAnimationFrame(animate);
+  torusKnot.rotation.x += 0.005;
+  torusKnot.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', ()=>{
+  camera.aspect = window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+
+</body>
+</html>
